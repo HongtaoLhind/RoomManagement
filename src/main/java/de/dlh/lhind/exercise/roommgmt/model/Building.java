@@ -71,4 +71,18 @@ public class Building {
                 ", public access=" + publicAccess +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object other){
+        if (!(other instanceof Building)) {
+            return false;
+        }
+
+        Building otherBuilding = (Building) other;
+
+        return this.id.equals((otherBuilding).id)
+                && this.buildingNumber.equals((otherBuilding).buildingNumber)
+                && this.description.equals(otherBuilding.description)
+                && this.publicAccess.equals(otherBuilding.publicAccess);
+    }
 }
